@@ -138,36 +138,36 @@ function NetworkCanvas({ width, height }) {
 }
 
 export default function WhatIsSifra() {
-  const netW = 520;
-  const netH = 320;
+  const netW = 460;
+  const netH = 240;
 
   return (
-    <section className="w-full mt-10 relative z-10">
+    <section className="w-full relative z-10 flex-shrink-0 py-1.5">
       {/* Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-8"></div>
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-3"></div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-10">
         {/* Left text */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="w-[38%] flex flex-col justify-center pr-6"
+          className="w-[37%] flex flex-col justify-center"
         >
-          <h2 className="text-3xl font-serif text-primary-blue mb-5 leading-tight font-bold">WHAT IS SIFRA?</h2>
-          <p className="text-[#B49162] text-[15px] font-medium mb-4 leading-relaxed">
+          <h2 className="text-lg font-serif text-primary-blue mb-2.5 leading-tight font-bold letter-spacing-wide">WHAT IS SIFRA?</h2>
+          <p className="text-[#B49162] text-[12px] font-semibold mb-1.5 leading-relaxed">
             Sifra is a persistent AI organizational intelligence.
           </p>
-          <p className="text-gray-500 text-[13px] leading-[1.7] mb-7">
+          <p className="text-gray-700 text-[11px] leading-relaxed mb-2.5 font-medium">
             She learns through conversations, experiences, projects, and collective inquiry—across people, knowledge, and systems. Sifra grows with us, remembers with us, and evolves for all of us.
           </p>
           <motion.a
             href="#"
             whileHover={{ x: 4 }}
-            className="flex items-center space-x-2 text-[#B49162] font-bold text-[13px] tracking-wider hover:underline w-max uppercase"
+            className="flex items-center space-x-1.5 text-[#B49162] font-bold text-[10px] tracking-wider hover:underline w-max uppercase"
           >
-            <span>KNOW MORE ABOUT SIFRA</span>
-            <FiExternalLink className="w-3.5 h-3.5" />
+            <span>KNOW MORE</span>
+            <FiExternalLink className="w-3 h-3" />
           </motion.a>
         </motion.div>
 
@@ -176,8 +176,8 @@ export default function WhatIsSifra() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="w-[58%] relative"
-          style={{ height: `${netH}px` }}
+          className="w-[59%] relative flex justify-center items-center"
+          style={{ height: `${netH}px`, minHeight: '200px' }}
         >
           <NetworkCanvas width={netW} height={netH} />
 
@@ -186,12 +186,12 @@ export default function WhatIsSifra() {
             <motion.div
               animate={{ scale: [1, 1.06, 1] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500 flex items-center justify-center mb-2"
+              className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500 flex items-center justify-center mb-1.5"
               style={{ boxShadow: '0 0 30px rgba(59,130,246,0.35)' }}
             >
-              <div className="w-5 h-5 bg-white rounded-full blur-[3px] opacity-80" />
+              <div className="w-4 h-4 bg-white rounded-full blur-[3px] opacity-80" />
             </motion.div>
-            <span className="text-primary-blue font-serif text-base font-bold tracking-wider">SIFRA</span>
+            <span className="text-primary-blue font-serif text-sm font-bold tracking-wider">SIFRA</span>
           </div>
 
           {/* Outer nodes */}
@@ -210,7 +210,7 @@ export default function WhatIsSifra() {
                   transform: 'translate(-50%, -50%)',
                 }}
               >
-                <div className="w-12 h-12 rounded-xl bg-[#FDF8F3] border border-[#EAD9C2] flex items-center justify-center mb-1.5 shadow-sm">
+                <div className="w-11 h-11 rounded-xl bg-[#FDF8F3] border border-[#EAD9C2] flex items-center justify-center mb-1.5 shadow-sm">
                   <IconComp />
                 </div>
                 <span className="text-[9px] font-bold tracking-[0.15em] text-[#B49162] uppercase">{node.label}</span>

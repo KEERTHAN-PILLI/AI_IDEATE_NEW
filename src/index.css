@@ -17,10 +17,12 @@
     box-sizing: border-box;
   }
 
-  html, body {
+  html,
+  body,
+  #root {
     overflow: hidden;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
   }
 
   body {
@@ -41,6 +43,12 @@
   }
 }
 
+.main-landing-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 /* Smooth scrollbar hidden */
 ::-webkit-scrollbar {
   display: none;
@@ -58,8 +66,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+  0%, 100% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.35); }
+  50% { box-shadow: 0 0 45px rgba(59, 130, 246, 0.65); }
 }
 
 @keyframes orbit {
@@ -81,4 +89,9 @@
 
 .animate-orbit {
   animation: orbit 20s linear infinite;
+}
+
+/* Letter spacing utility */
+.letter-spacing-wide {
+  letter-spacing: 0.05em;
 }

@@ -10,9 +10,9 @@ function App() {
   const containerRef = useRef(null);
   const [scale, setScale] = useState(1);
 
-  // Design reference dimensions based on the screenshot proportions
+  // Desktop landing-page artboard. It scales as one unit to keep every section visible.
   const DESIGN_WIDTH = 1440;
-  const DESIGN_HEIGHT = 1900;
+  const DESIGN_HEIGHT = 900;
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,7 +31,7 @@ function App() {
   }, []);
 
   return (
-    <div className="w-screen h-screen overflow-hidden bg-white flex items-start justify-center">
+    <div className="main-landing-page bg-white flex items-start justify-center">
       <div 
         ref={containerRef}
         style={{
@@ -42,8 +42,8 @@ function App() {
         }}
         className="bg-white flex flex-col overflow-hidden relative"
       >
-        {/* Main content area */}
-        <div className="px-16 pt-6 flex-1 flex flex-col relative z-10">
+        {/* Main content area with professional spacing grid */}
+        <div className="px-14 pt-3 pb-2 flex-1 flex flex-col relative z-10 justify-start overflow-hidden gap-1.5">
           <Header />
           <Hero />
           <Avatars />

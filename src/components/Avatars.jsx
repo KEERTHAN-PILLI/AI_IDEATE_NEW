@@ -39,12 +39,12 @@ const avatars = [
 
 function AvatarOrb({ gradient, glowColor, bgGlow, delay = 0 }) {
   return (
-    <div className="relative w-20 h-20 mb-5">
+    <div className="relative w-12 h-12 mb-2">
       {/* Background glow */}
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.25, 0.5, 0.25] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay }}
-        className={`absolute -inset-3 rounded-full ${bgGlow} blur-[18px]`}
+        className={`absolute -inset-2 rounded-full ${bgGlow} blur-[14px]`}
       />
 
       {/* Main orb */}
@@ -52,10 +52,10 @@ function AvatarOrb({ gradient, glowColor, bgGlow, delay = 0 }) {
         animate={{ y: [0, -4, 0] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay }}
         className={`w-full h-full rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center relative z-10 transition-transform duration-500`}
-        style={{ boxShadow: `0 0 25px ${glowColor}` }}
+        style={{ boxShadow: `0 0 20px ${glowColor}` }}
       >
         {/* Inner highlight */}
-        <div className="w-7 h-7 bg-white rounded-full blur-[4px] opacity-70" />
+        <div className="w-5 h-5 bg-white rounded-full blur-[3px] opacity-70" />
         
         {/* Rotating orbit ring */}
         <motion.div
@@ -71,17 +71,17 @@ function AvatarOrb({ gradient, glowColor, bgGlow, delay = 0 }) {
 
 export default function Avatars() {
   return (
-    <section className="w-full mt-10 relative z-10">
+    <section className="w-full relative z-10 flex-shrink-0 py-1">
       {/* Section divider line */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-6"></div>
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-3.5"></div>
 
-      <div className="flex items-center justify-center space-x-4 mb-7">
-        <h3 className="text-sm font-bold tracking-[0.2em] text-primary-blue uppercase text-center">
-          CHAT ON WHATSAPP WITH SIFRA'S AVATARS
+      <div className="flex items-center justify-center space-x-4 mb-3.5">
+        <h3 className="text-[11px] font-bold tracking-[0.25em] text-primary-blue uppercase text-center letter-spacing-wide">
+          Chat on WhatsApp with Sifra's Avatars
         </h3>
       </div>
 
-      <div className="flex justify-between space-x-5">
+      <div className="flex justify-between gap-3">
         {avatars.map((avatar, idx) => (
           <motion.div 
             key={idx}
@@ -94,24 +94,24 @@ export default function Avatars() {
               boxShadow: "0 20px 50px rgba(0,0,0,0.06)",
               borderColor: "rgba(198, 156, 109, 0.3)"
             }}
-            className="flex-1 bg-white rounded-2xl py-7 px-5 flex flex-col items-center text-center border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all cursor-pointer"
+            className="flex-1 bg-white rounded-xl py-4 px-4 flex flex-col items-center text-center border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer"
           >
             <AvatarOrb {...avatar} delay={idx * 0.6} />
 
-            <h4 className="text-[#B49162] text-xs font-bold tracking-[0.2em] uppercase mb-0.5">{avatar.name}</h4>
-            <h5 className="text-lg font-serif font-bold text-primary-blue mb-3">{avatar.role}</h5>
+            <h4 className="text-[#B49162] text-[10px] font-bold tracking-[0.2em] uppercase mb-0.5">{avatar.name}</h4>
+            <h5 className="text-sm font-serif font-bold text-primary-blue mb-2 letter-spacing-wide">{avatar.role}</h5>
             
-            <p className="text-gray-500 text-[13px] leading-relaxed mb-6 flex-1">
+            <p className="text-gray-600 text-[11px] leading-relaxed mb-3 flex-1 font-medium">
               {avatar.desc}
             </p>
 
             <motion.button 
               whileHover={{ scale: 1.06, backgroundColor: "#f0fdf4" }}
               whileTap={{ scale: 0.96 }}
-              className="flex items-center space-x-2 border border-gray-200 hover:border-green-400 text-gray-600 hover:text-green-600 px-4 py-2 rounded-md text-[11px] font-bold tracking-wider transition-colors"
+              className="flex items-center space-x-1.5 border-2 border-gray-200 hover:border-green-500 text-gray-700 hover:text-green-600 px-3.5 py-1.5 rounded-lg text-[9px] font-bold tracking-wider transition-all duration-200 hover:shadow-md hover:shadow-green-200/30"
             >
-              <FaWhatsapp className="w-3.5 h-3.5 text-green-500" />
-              <span>CHAT WITH {avatar.role}</span>
+              <FaWhatsapp className="w-3 h-3 text-green-500" />
+              <span>CHAT</span>
             </motion.button>
           </motion.div>
         ))}
